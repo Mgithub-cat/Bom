@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+    	.box{
+    		width: 80%;
+    		height: 2000px;
+    		margin: 0 auto;
+    		border: 2px solid blue;
+    	}
+    	.button{
+    		width: 150px;
+    		height: 150px;
+    		border-radius: 50%;
+    		background: cyan;
+    		color: #fff;
+    		line-height: 144px;
+    		font-size: 50px;
+    		text-align: center;
+    		position: fixed;
+    		right: 50px;
+    		bottom: 50px;
+    	}
+    </style>
+    <body>
+    	<div class="box"></div>
+    	<div class="button">Top</div>
+    </body>
+</html>
+<script>
+	let btn = document.querySelector('.button');
+	btn.style.display = 'none';
+	window.onscroll = function(){
+		if(document.documentElement.scrollTop > 500){
+			btn.style.display = 'block';
+		}else{
+			btn.style.display = 'none';
+		}
+        btn.onclick = function(){
+            document.documentElement.scrollTop = 0;
+        }
+	}
+</script>
