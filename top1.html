@@ -33,13 +33,15 @@
 	let btn = document.querySelector('.button');
 	btn.style.display = 'none';
 	window.onscroll = function(){
-		if(document.documentElement.scrollTop > 500){
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop ||window.scrollY || window.pageYOffset;
+        console.log(scrollTop);
+		if(scrollTop > 500){
 			btn.style.display = 'block';
 		}else{
 			btn.style.display = 'none';
 		}
         btn.onclick = function(){
-            document.documentElement.scrollTop = 0;
+            window.scroll(0,0);
         }
 	}
 </script>
